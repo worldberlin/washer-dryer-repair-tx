@@ -8,6 +8,7 @@ interface Props {
   canonical?: string;
 }
 
+// Correct Destructuring with Default Values
 const {
   title = "Texas Washer & Dryer Repair | Same-Day Service | Dallas, Houston & Austin",
   description = "Professional washer and dryer repair across Texas. Same-day service in Dallas, Houston, Austin, San Antonio & Fort Worth. Licensed technicians, 90-day warranty. Call now!",
@@ -56,7 +57,6 @@ const schema = JSON.stringify({
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Primary SEO Meta Tags -->
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
@@ -65,23 +65,19 @@ const schema = JSON.stringify({
     <meta name="author" content="Texas Washer & Dryer Repair" />
     <link rel="canonical" href={canonical} />
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content="Texas Washer & Dryer Repair" />
 
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={canonical} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
 
-    <!-- Local Business JSON-LD Schema -->
     <script type="application/ld+json" set:html={schema} />
 
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
