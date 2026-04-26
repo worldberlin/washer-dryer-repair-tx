@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
 
-// https://astro.build/config
 export default defineConfig({
   site: 'https://washer-dryer-repair-tx.netlify.app/',
-  output: 'static'
+  output: 'static',
+  integrations: [tailwind()]
 });
