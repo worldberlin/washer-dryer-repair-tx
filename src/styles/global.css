@@ -1,4 +1,7 @@
-@import "tailwindcss";
+/* ─── Tailwind Directives (Netlify Fix) ────────────────────── */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* ─── Base Resets ─────────────────────────────────────────── */
 *, *::before, *::after {
