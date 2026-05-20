@@ -1,0 +1,95 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  canonical?: string;
+}
+
+const {
+  title = "Texas Washer & Dryer Repair | Same-Day Service | Dallas, Houston & Austin",
+  description = "Professional washer and dryer repair across Texas. Same-day service in Dallas, Houston, Austin, San Antonio & Fort Worth. Licensed technicians, 90-day warranty. Call now!",
+  keywords = "washer repair Dallas, dryer service Houston, emergency appliance repair Texas, washer repair Austin, dryer repair San Antonio, appliance repair Fort Worth",
+  canonical = "https://washer-dryer-repair-tx.netlify.app",
+} = Astro.props;
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Texas Washer & Dryer Repair",
+  "description": description,
+  "url": canonical,
+  "telephone": "+18882777325",
+  "priceRange": "$$",
+  "areaServed": [
+    { "@type": "City", "name": "Dallas" },
+    { "@type": "City", "name": "Houston" },
+    { "@type": "City", "name": "Austin" },
+    { "@type": "City", "name": "San Antonio" },
+    { "@type": "City", "name": "Fort Worth" }
+  ],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "07:00",
+    "closes": "21:00"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Appliance Repair Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Washer Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dryer Repair" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Emergency Appliance Repair" } }
+    ]
+  }
+});
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Texas Washer & Dryer Repair" />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Texas Washer & Dryer Repair" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonical} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- Local Business JSON-LD Schema -->
+    <script type="application/ld+json" set:html={schema} />
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="font-family: 'Inter', sans-serif;" class="antialiased text-slate-800 bg-white">
+    <slot />
+  </body>
+</html>

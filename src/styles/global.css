@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* ─── Base Resets ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Focus Accessibility ─────────────────────────────────── */
+:focus-visible {
+  outline: 3px solid #f97316;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─── FAQ Accordion Chevron Animation ─────────────────────── */
+details summary {
+  user-select: none;
+}
+
+details[open] summary svg {
+  transform: rotate(180deg);
+}
+
+/* ─── Smooth hover transitions on links ───────────────────── */
+a {
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+/* ─── Custom scrollbar (WebKit) ───────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e3a8a;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1e40af;
+}
