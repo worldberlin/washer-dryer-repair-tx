@@ -65,7 +65,7 @@ const { cityName, serviceName } = Astro.props;
         <aside class="rounded-3xl border border-orange-500/20 bg-orange-500/10 p-6 text-center">
           <p class="text-sm uppercase tracking-[0.28em] text-orange-100 font-bold mb-3">Ready in {cityName}</p>
           <h2 class="text-3xl font-extrabold text-white mb-4">Call Now</h2>
-          <a href="tel:+18882777325" class="block rounded-2xl bg-orange-500 px-6 py-4 text-xl font-bold text-white transition hover:bg-orange-400">
+          <a href="tel:+18882777325" aria-label={`Call (888) 277-7325 for ${serviceName} in ${cityName}, TX`} class="block rounded-2xl bg-orange-500 px-6 py-4 text-xl font-bold text-white transition hover:bg-orange-400">
             📞 (888) 277-7325
           </a>
           <p class="text-blue-100/80 text-sm mt-4">Same-day service, transparent pricing, and verified local technicians.</p>
