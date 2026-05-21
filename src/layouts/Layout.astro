@@ -8,11 +8,13 @@ interface Props {
   canonical?: string;
 }
 
+const baseSite = Astro.site || 'https://washer-dryer-repair-tx.netlify.app';
+const canonicalUrl = Astro.props.canonical ?? new URL(Astro.url.pathname, baseSite).href;
+
 const {
   title = "Texas Washer & Dryer Repair | Same-Day Service | Dallas, Houston & Austin",
   description = "Professional washer and dryer repair across Texas. Same-day service in Dallas, Houston, Austin, San Antonio & Fort Worth. Licensed technicians, 90-day warranty. Call now!",
   keywords = "washer repair Dallas, dryer service Houston, emergency appliance repair Texas, washer repair Austin, dryer repair San Antonio, appliance repair Fort Worth",
-  canonical = "https://washer-dryer-repair-tx.netlify.app",
 } = Astro.props;
 
 const schema = JSON.stringify({
@@ -20,7 +22,7 @@ const schema = JSON.stringify({
   "@type": "LocalBusiness",
   "name": "Texas Washer & Dryer Repair",
   "description": description,
-  "url": canonical,
+  "url": canonicalUrl,
   "telephone": "+18882777325",
   "priceRange": "$$",
   "areaServed": [
@@ -63,18 +65,18 @@ const schema = JSON.stringify({
     <meta name="keywords" content={keywords} />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Texas Washer & Dryer Repair" />
-    <link rel="canonical" href={canonical} />
+    <link rel="canonical" href={canonicalUrl} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonical} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content="Texas Washer & Dryer Repair" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content={canonical} />
+    <meta name="twitter:url" content={canonicalUrl} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
 
