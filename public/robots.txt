@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://washer-dryer-repair-tx.netlify.app/sitemap.xml
