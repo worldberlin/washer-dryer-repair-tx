@@ -23,25 +23,54 @@ const { cityName, serviceName } = Astro.props;
 ---
 
 <Layout title={`${serviceName} in ${cityName}, TX | Expert Appliance Repair`}>
-  <main class="max-w-4xl mx-auto py-20 px-4 text-white">
-    <div class="bg-orange-500 text-white px-4 py-2 rounded-full inline-block text-sm font-semibold mb-4">
-      📍 Serving {cityName} & Surrounding Areas
-    </div>
-    
-    <h1 class="text-5xl font-extrabold text-white leading-tight mb-6">
-      Reliable <span class="text-orange-400">{serviceName}</span> Services in {cityName}, Texas
-    </h1>
-    
-    <p class="text-xl text-blue-100 leading-relaxed mb-8">
-      Need a quick fix? We provide top-rated {serviceName} in {cityName}, TX. Our EPA-certified technicians are local, insured, and ready to bring your appliances back to life today with original OEM-quality parts.
-    </p>
+  <main class="min-h-[calc(100vh-8rem)] max-w-4xl mx-auto pt-28 pb-20 px-4 text-white">
+    <div class="rounded-[2rem] border border-white/10 bg-slate-900/90 p-10 shadow-2xl shadow-black/40">
+      <div class="bg-orange-500 text-white px-4 py-2 rounded-full inline-block text-sm font-semibold mb-6">
+        📍 Serving {cityName} & Surrounding Areas
+      </div>
 
-    <div class="bg-orange-500 text-white p-8 rounded-2xl shadow-xl text-center">
-      <h2 class="text-2xl font-bold mb-2">Get Same-Day Service in {cityName}</h2>
-      <p class="mb-6 opacity-90">Call our direct dispatch line or book your slot online now.</p>
-      <a href="tel:18882777325" class="bg-blue-900 hover:bg-blue-950 text-white font-bold py-4 px-8 rounded-xl text-xl inline-block transition">
-        📞 Call (888) 277-7325
-      </a>
+      <h1 class="text-5xl font-extrabold text-white leading-tight mb-5">
+        Reliable <span class="text-orange-400">{serviceName}</span> Services in {cityName}, Texas
+      </h1>
+
+      <p class="text-xl text-blue-100 leading-relaxed mb-8">
+        Need a quick fix? We provide top-rated {serviceName} in {cityName}, TX. Our EPA-certified technicians are local, insured, and ready to bring your appliances back to life today with original OEM-quality parts.
+      </p>
+
+      <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px] items-start">
+        <div class="space-y-6">
+          <ul class="grid gap-3">
+            {[
+              `Top-Rated Technicians in ${cityName}`,
+              '90-Day Repair Warranty',
+              'OEM-Quality Parts Used',
+              `${serviceName} expertise for local homes`,
+              'Fast same-day dispatch across your area',
+            ].map(point => (
+              <li class="flex gap-3 items-start">
+                <span class="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-orange-500 text-white text-sm font-bold">✓</span>
+                <span class="text-blue-100 leading-relaxed">{point}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div class="rounded-3xl border border-white/10 bg-blue-950/80 p-6 shadow-xl">
+            <p class="text-orange-100 text-xs uppercase tracking-[0.24em] font-semibold mb-3">Local {cityName} Service</p>
+            <p class="text-white text-lg font-semibold leading-snug">
+              Our team knows {cityName} homes and appliances — from seasonal humidity challenges to local brand preferences.
+            </p>
+          </div>
+        </div>
+
+        <aside class="rounded-3xl border border-orange-500/20 bg-orange-500/10 p-6 text-center">
+          <p class="text-sm uppercase tracking-[0.28em] text-orange-100 font-bold mb-3">Ready in {cityName}</p>
+          <h2 class="text-3xl font-extrabold text-white mb-4">Call Now</h2>
+          <a href="tel:+18882777325" class="block rounded-2xl bg-orange-500 px-6 py-4 text-xl font-bold text-white transition hover:bg-orange-400">
+            📞 (888) 277-7325
+          </a>
+          <p class="text-blue-100/80 text-sm mt-4">Same-day service, transparent pricing, and verified local technicians.</p>
+        </aside>
+      </div>
     </div>
   </main>
 </Layout>
