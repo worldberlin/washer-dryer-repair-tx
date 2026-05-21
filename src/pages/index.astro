@@ -752,11 +752,21 @@ const stats = [
       <div>
         <h3 class="text-white font-bold text-sm uppercase tracking-widest mb-5">Services</h3>
         <ul class="space-y-2.5 text-sm">
-          {["Washer Repair", "Dryer Repair", "Emergency Repair", "Preventive Maintenance", "All Brands Serviced"].map(s => (
-            <li>
-              <a href={PHONE_HREF} class="text-blue-300 hover:text-white transition-colors">{s}</a>
-            </li>
-          ))}
+          <li>
+            <a href="/dallas/washer-repair" class="text-blue-300 hover:text-white transition-colors">Washer Repair</a>
+          </li>
+          <li>
+            <a href="/dallas/dryer-repair" class="text-blue-300 hover:text-white transition-colors">Dryer Repair</a>
+          </li>
+          <li>
+            <a href="/dallas/emergency-repair" class="text-blue-300 hover:text-white transition-colors">Emergency Repair</a>
+          </li>
+          <li>
+            <a href="/dallas/preventive-maintenance" class="text-blue-300 hover:text-white transition-colors">Preventive Maintenance</a>
+          </li>
+          <li>
+            <a href="/dallas/all-brands-serviced" class="text-blue-300 hover:text-white transition-colors">All Brands Serviced</a>
+          </li>
         </ul>
       </div>
 
@@ -764,13 +774,21 @@ const stats = [
       <div>
         <h3 class="text-white font-bold text-sm uppercase tracking-widest mb-5">Service Areas</h3>
         <ul class="space-y-2.5 text-sm">
-          {serviceAreas.map(area => (
-            <li>
-              <a href={`#service-areas`} class="text-blue-300 hover:text-white transition-colors">
-                {area.city}, TX
-              </a>
-            </li>
-          ))}
+          <li>
+            <a href="/dallas/washer-repair" class="text-blue-300 hover:text-white transition-colors">Dallas, TX</a>
+          </li>
+          <li>
+            <a href="/houston/washer-repair" class="text-blue-300 hover:text-white transition-colors">Houston, TX</a>
+          </li>
+          <li>
+            <a href="/austin/washer-repair" class="text-blue-300 hover:text-white transition-colors">Austin, TX</a>
+          </li>
+          <li>
+            <a href="/san-antonio/washer-repair" class="text-blue-300 hover:text-white transition-colors">San Antonio, TX</a>
+          </li>
+          <li>
+            <a href="/fort-worth/washer-repair" class="text-blue-300 hover:text-white transition-colors">Fort Worth, TX</a>
+          </li>
           <li><span class="text-blue-400 text-xs">+ All of Texas</span></li>
         </ul>
       </div>
