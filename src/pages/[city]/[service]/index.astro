@@ -1,0 +1,47 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  const cities = ['dallas', 'houston', 'austin', 'san-antonio', 'fort-worth'];
+  const services = ['washer-repair', 'dryer-repair', 'emergency-repair', 'preventive-maintenance', 'all-brands-serviced'];
+
+  return cities.flatMap(city => {
+    return services.map(service => {
+      const cityName = city.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+      const serviceName = service.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+
+      return {
+        params: { city, service },
+        props: { cityName, serviceName }
+      };
+    });
+  });
+}
+
+const { city, service } = Astro.params;
+const { cityName, serviceName } = Astro.props;
+---
+
+<Layout title={`${serviceName} in ${cityName}, TX | Expert Appliance Repair`}>
+  <main class="max-w-4xl mx-auto py-20 px-4 text-white">
+    <div class="bg-orange-500 text-white px-4 py-2 rounded-full inline-block text-sm font-semibold mb-4">
+      📍 Serving {cityName} & Surrounding Areas
+    </div>
+    
+    <h1 class="text-5xl font-extrabold text-white leading-tight mb-6">
+      Reliable <span class="text-orange-400">{serviceName}</span> Services in {cityName}, Texas
+    </h1>
+    
+    <p class="text-xl text-blue-100 leading-relaxed mb-8">
+      Need a quick fix? We provide top-rated {serviceName} in {cityName}, TX. Our EPA-certified technicians are local, insured, and ready to bring your appliances back to life today with original OEM-quality parts.
+    </p>
+
+    <div class="bg-orange-500 text-white p-8 rounded-2xl shadow-xl text-center">
+      <h2 class="text-2xl font-bold mb-2">Get Same-Day Service in {cityName}</h2>
+      <p class="mb-6 opacity-90">Call our direct dispatch line or book your slot online now.</p>
+      <a href="tel:18882777325" class="bg-blue-900 hover:bg-blue-950 text-white font-bold py-4 px-8 rounded-xl text-xl inline-block transition">
+        📞 Call (888) 277-7325
+      </a>
+    </div>
+  </main>
+</Layout>
