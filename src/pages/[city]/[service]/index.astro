@@ -22,7 +22,10 @@ const { city, service } = Astro.params;
 const { cityName, serviceName } = Astro.props;
 ---
 
-<Layout title={`${serviceName} in ${cityName}, TX | Expert Appliance Repair`}>
+<Layout
+  title={`${serviceName} in ${cityName}, TX | Expert Appliance Repair`}
+  description={`Get fast ${serviceName} in ${cityName}, TX with licensed technicians, transparent pricing, and same-day appliance repair service.`}
+>
   <main class="min-h-[calc(100vh-8rem)] max-w-4xl mx-auto pt-28 pb-20 px-4 text-white">
     <div class="rounded-[2rem] border border-white/10 bg-slate-900/90 p-10 shadow-2xl shadow-black/40">
       <div class="bg-orange-500 text-white px-4 py-2 rounded-full inline-block text-sm font-semibold mb-6">
